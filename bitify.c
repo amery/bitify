@@ -50,12 +50,8 @@ static int unbitify(const char *arg0, char **argv) {
 			int first = 1;
 			for(j=1; value != 0; j++) {
 				if (value & 1) {
-					if (first) {
-						printf("%u", j);
-						first = 0;
-					} else {
-						printf(" %u", j);
-					}
+					printf(" %u"+first, j);
+					first = 0;
 				}
 				value >>= 1;
 			}
