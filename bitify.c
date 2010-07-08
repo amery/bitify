@@ -1,3 +1,9 @@
+/* this file belongs to `bitify` http://github.com/amery/bitify
+ *
+ * Copyright (c) 2010, Alejandro Mery <amery@geeks.cl>
+ * All rights reserved. See COPYING for details.
+ ***/
+
 #include <stdint.h>
 #include <unistd.h>
 #include <stdlib.h>

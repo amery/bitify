@@ -1,5 +1,8 @@
 bitify - toy to list the bits of a number
-
+Alejandro Mery <amery@geeks.cl>
 
 `bitify` takes a list of bits and returns a number with those enabled, and
 `unbitify` takes a number and returns the list of enabled bits on it.
+
+This tool is distributed under the terms of the new BSD license. See
+the COPYING file for details.
