@@ -1,0 +1,5 @@
+bitify - toy to list the bits of a number
+
+
+`bitify` takes a list of bits and returns a number with those enabled, and
+`unbitify` takes a number and returns the list of enabled bits on it.
