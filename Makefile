@@ -21,8 +21,8 @@ BINDIR  = $(PREFIX)/bin
 
 all: $(TARGETS)
 
-$(ALIASES):
-	ln -snf $(APP) $@
+$(ALIASES): $(APP)
+	ln -s $^ $@
 
 install:
 	@mkdir -p $(DESTDIR)$(BINDIR)/
