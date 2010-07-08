@@ -48,17 +48,16 @@ static int unbitify(const char *arg0, char **argv) {
 			printf("0\n");
 		} else {
 			int first = 1;
-			uint32_t mask;
-			for(j=1, mask=1; value != 0; j++, mask<<=1) {
-				if (value & mask) {
+			for(j=1; value != 0; j++) {
+				if (value & 1) {
 					if (first) {
 						printf("%u", j);
 						first = 0;
 					} else {
 						printf(" %u", j);
 					}
-					value ^= mask;
 				}
+				value >>= 1;
 			}
 			printf("\n");
 		}
