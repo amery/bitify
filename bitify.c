@@ -39,9 +39,9 @@ static int unbitify(const char *arg0, char **argv) {
 
 	for (i=0; argv[i]; i++) {
 		char *endptr = NULL;
-		long int value = strtol(argv[i], &endptr, 10);
+		long long int value = strtoll(argv[i], &endptr, 10);
 
-		if (*endptr != '\0' || value < 0 || value > 0x7fffffffL) {
+		if (*endptr != '\0' || value < 0 || value > 0xffffffffLL) {
 			errf("%s: %s: invalid value\n", arg0, argv[i]);
 			return 1;
 		} else if (value == 0) {
