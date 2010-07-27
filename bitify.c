@@ -13,6 +13,7 @@
 #include <libgen.h>
 
 #define errf(...)	fprintf(stderr, __VA_ARGS__)
+#define print(s)	fputs(s, stdout)
 
 static int bitify(const char *arg0, char **argv) {
 	uint32_t value = 0;
@@ -45,7 +46,7 @@ static int unbitify(const char *arg0, char **argv) {
 			errf("%s: %s: invalid value\n", arg0, argv[i]);
 			return 1;
 		} else if (value == 0) {
-			printf("0\n");
+			print("0\n");
 		} else {
 			int first = 1;
 			for(j=1; value != 0; j++) {
@@ -55,7 +56,7 @@ static int unbitify(const char *arg0, char **argv) {
 				}
 				value >>= 1;
 			}
-			printf("\n");
+			print("\n");
 		}
 	}
 	return 0;
