@@ -15,6 +15,13 @@
 #define errf(...)	fprintf(stderr, __VA_ARGS__)
 #define print(s)	fputs(s, stdout)
 
+#ifdef UNUSED
+#elif defined(__GNUC__)
+#	define UNUSED(x) UNUSED_ ## x __attribute__((unused))
+#else
+#	define UNUSED(x) x
+#endif
+
 static int bitify(const char *arg0, char **argv) {
 	uint32_t value = 0;
 	register int i;
@@ -71,7 +78,7 @@ struct {
 	{ NULL, NULL }
 };
 
-int main(int argc, char **argv)
+int main(int UNUSED(argc), char **argv)
 {
 	register int i = 0;
 	const char *arg0 = basename(argv[0]);
